@@ -48,8 +48,8 @@ class PriceEntry(BaseModel):
     is_lowest_price: bool = Field(..., alias="isLowestPrice")
     local_time: datetime = Field(..., alias="localTime")
     price_inc_vat: float = Field(..., alias="priceInclVat")
-    raw_price_inc_vat: float = Field(..., alias="rawPriceInclVat")
-    value: float = Field(..., alias="value")
+    total_price_inc_vat: float = Field(..., alias="totalPriceInclVat")
+    kwPrice: float = Field(..., alias="kwPrice")
 
 
 class FullPriceResult(BaseModel):

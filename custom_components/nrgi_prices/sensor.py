@@ -105,8 +105,8 @@ class NrgiPrice(Entity):
           price_points_attributes = list(map(lambda price_point: {
             "start": price_point.local_time,
             "price_inc_vat": price_point.price_inc_vat  / 100,
-            "raw_price_inc_vat": price_point.raw_price_inc_vat  / 100,
-            "value": price_point.value  / 100,
+            "total_price_inc_vat": price_point.total_price_inc_vat  / 100,
+            "kw_price": price_point.kwPrice  / 100,
             "is_highest_price": price_point.is_highest_price,
             "is_lowest_price": price_point.is_lowest_price
           }, full_price_result.prices))
@@ -131,5 +131,5 @@ class NrgiPrice(Entity):
           _LOGGER.debug("No today data available yet")
           return
 
-        price_now = self._hass_nrgi.today_data.prices[current_hour].value  / 100
+        price_now = self._hass_nrgi.today_data.prices[current_hour].kwPrice  / 100
         self._state = (price_now)

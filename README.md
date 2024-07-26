@@ -43,7 +43,7 @@ series:
     type: column
     data_generator: |
       return entity.attributes.raw_today.map((start, index) => {
-        return [new Date(start["start"]).getTime(), start["value"]];
+        return [new Date(start["start"]).getTime(), start["kwPrice"]];
       });
 ```
 
@@ -71,7 +71,7 @@ series:
     type: column
     data_generator: |
       return entity.attributes.raw_tomorrow.map((start, index) => {
-        return [new Date(start["start"]).getTime(), start["value"]];
+        return [new Date(start["start"]).getTime(), start["kwPrice"]];
       });
 ```
 
